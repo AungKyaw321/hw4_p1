@@ -168,15 +168,23 @@
           <legend>Add</legend>
           <label for="addBtn">Basic Addition</label>
           <input type="button" id="addBtn" value="Add" />
-          <select name="select" id="selected">
+          <label for="element-type">Select Options:</label>
+          <select id="selected">
             <option value="TextNode">Text Node</option>
             <option value="Comment">Comment</option>
             <option value="Element">Element</option>
           </select>
+
+          <label for="content">Content:</label>
+          <input type="text" id="content" placeholder="Enter content" />
+
+          <label for="elementTag"
+            >Element Tag (only if you pick element):</label
+          >
           <input
             type="text"
             id="elementTagName"
-            placeholder="Enter Tag Name (if adding an element)"
+            placeholder="will do nothing for other selection"
           />
           <input type="button" id="add" value="Add" />
           <output

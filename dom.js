@@ -187,18 +187,21 @@ function advancedAdd() {
   let output = document.getElementById("output");
   let newElement;
   let selectedOption = selected.value;
+  const elementContent = document.getElementById("content").value;
+  const tagName = document.getElementById("elementTagName").value;
+
   if (selectedOption == "TextNode") {
-    newElement = document.createTextNode(
-      "New Text Node: " + new Date().toLocaleString()
-    );
+    newElement = document.createTextNode(elementContent || `New Text Node`);
   } else if (selectedOption == "Comment") {
-    newElement = document.createComment(
-      "New Comment: " + new Date().toLocaleString()
-    );
+    newElement = document.createComment(elementContent || `New Comment`);
   } else if (selectedOption == "Element") {
-    const tagName = document.getElementById("elementTagName").value;
     newElement = document.createElement(tagName);
-    newElement.textContent = "New Element: " + new Date().toLocaleString();
+    newElement.textContent = elementContent || `New Element`;
+  }
+  if (elementContent) {
+    newElement.textContent += "-" + new Date().toLocaleString();
+  } else {
+    newElement.textContent += "-" + new Date().toLocaleString();
   }
   output.appendChild(newElement);
 }
