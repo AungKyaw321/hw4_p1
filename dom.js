@@ -191,17 +191,17 @@ function advancedAdd() {
   const tagName = document.getElementById("elementTagName").value;
 
   if (selectedOption == "TextNode") {
-    newElement = document.createTextNode(elementContent || `New Text Node`);
+    newElement = document.createTextNode(elementContent || ` New Text Node`);
   } else if (selectedOption == "Comment") {
-    newElement = document.createComment(elementContent || `New Comment`);
+    newElement = document.createComment(elementContent || ` New Comment`);
   } else if (selectedOption == "Element") {
     newElement = document.createElement(tagName);
-    newElement.textContent = elementContent || `New Element`;
+    newElement.textContent = elementContent || ` New Element`;
   }
   if (elementContent) {
-    newElement.textContent += "-" + new Date().toLocaleString();
+    newElement.textContent += " - " + new Date().toLocaleString();
   } else {
-    newElement.textContent += "-" + new Date().toLocaleString();
+    newElement.textContent += " - " + new Date().toLocaleString();
   }
   output.appendChild(newElement);
 }
